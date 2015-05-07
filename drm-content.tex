@@ -1,0 +1,107 @@
+\title{Trusted Computing}
+\subtitle{Execution in a system controlled by the adversary}
+\author{%
+  Daniel Bosk
+}
+\institute{%
+  Department of Information and Communication Systems\\
+  Mid Sweden University, SE-851\,70 Sundsvall
+}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+This laboratory assignment treats the area of trusted computing and the problem 
+facing \ac{DRM}.
+The problem with \ac{DRM} systems is that they must protect something in 
+a hostile environment where the adversary controls everything.
+
+A possible solution to this problem is to introduce a hardware module as 
+support.
+One such module is the \ac{TPM}, which was introduced in a cooperation between 
+Microsoft, Intel, IBM, HP, and Compaq \cite{Anderson2008sea}.
+Their purpose for that was to support \ac{DRM}.
+A newer development in this area is the UEFI secure boot, functionality 
+utilized by the latest versions of Microsoft Windows, where the hardware 
+refuses to boot the operating system if it is not cryptographically signed by 
+a given key \cite{WinUEFIboot}.
+This way they can guarantee that the boot loader is not modified, the boot 
+loader can further verify the rest of the operating system.
+Since the operating system is guaranteed to be unmodified, correct operation 
+from the operating system can be expected.
+
+However, without this support we will see that it is basically impossible to 
+protect programs from modification or data from copying.
+The only reason the \ac{TPM} prevents this is because it is hard for the 
+adversary to modify this hardware.
+
+\subsection{Aim}
+\label{sec:aim}
+The main aim of this assignment is that you should reflect on the possibilities 
+of the adversary with unlimited access to the software running on a machine.
+More specifically, the expected learning outcomes of this assignment are that 
+you will:
+\begin{itemize}
+    \input{aims.tex}
+\end{itemize}
+
+The next section covers what you must read before you understand this 
+assignment and how to do the work.
+Section \ref{sec:tasks} covers the work to be done, i.e.~how you should learn 
+this.
+Section \ref{sec:exam} covers how it will be examined, i.e.~how you show that 
+you have fulfilled the intended learning outcomes given above.
+
+
+\section{Theory}
+\label{sec:reading}
+\input{literature.tex}
+
+
+\section{Assignment}
+\label{sec:tasks}
+There is a program with a very simple \ac{DRM} found in URL
+\begin{center}
+  \url{http://ver.miun.se/courses/security/labs/cpager-drm}.
+\end{center}
+It is an ELF 64-bit LSB executable (x86-64, dynamically linked, stripped) for 
+a GNU/Linux system.
+(This same program happens to have its source code published under 
+a BSD-license without any \ac{DRM} on the same server.)
+The first part of this assignment is to break that \ac{DRM}.
+This will be solved together during a full-class hackathon in the computer lab.
+There will be a projector with the code for all to see, then we will rotate who 
+will be by the keyboard writing what the rest of the class is saying.
+This way we will discuss together and write the code together, everyone will 
+thus participate in the process.
+
+The second part of the assignment is to discuss the consequences of this, among 
+other things we will discuss the following questions:
+\begin{itemize}
+  \item What is the purpose of \acp{DRM}, since they can be circumvented?
+  \item Can we implement a \ac{DRM} which actually works?
+    What do we need for this?
+    Would it be worth it?
+\end{itemize}
+
+
+\section{Examination}
+\label{sec:exam}
+To pass this assignment you must first \emph{actively} participate in the 
+hackathon lab session.
+You must also actively contribute to the post-coding discussions.
+If you cannot participate in the lab session you have to solve the lab 
+yourself, then orally present your solution during one of the lab sessions.
+
+
+\subsubsection*{Acknowledgements}
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 
+Unported license.
+To view a copy of this license, visit 
+\url{http://creativecommons.org/licenses/by-sa/3.0/}.
+Its original source code can be found in URL 
+\url{https://github.com/dbosk/drmlab/}.
+
+
+\printbibliography
