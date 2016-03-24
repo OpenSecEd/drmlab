@@ -1,12 +1,9 @@
-FILES= 			drm.tex aims.tex literature.tex drm.bib
-
-USE_LATEXMK= 	yes
-USE_BIBLATEX= 	yes
-
 .PHONY: all
 all: drm.pdf
 
-drm.pdf: ${FILES} llncs
+SRC=	drm.tex aims.tex literature.tex drm.bib
+
+drm.pdf: ${SRC} llncs
 
 .PHONY: clean
 clean: clean-drm
