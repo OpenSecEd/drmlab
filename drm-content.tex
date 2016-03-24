@@ -1,4 +1,4 @@
-\title{Trusted Computing}
+\title{Lab: Trusted Computing}
 \subtitle{Execution in a system controlled by the adversary}
 \author{%
   Daniel Bosk
@@ -19,12 +19,12 @@ a hostile environment where the adversary controls everything.
 A possible solution to this problem is to introduce a hardware module as 
 support.
 One such module is the \ac{TPM}, which was introduced in a cooperation between 
-Microsoft, Intel, IBM, HP, and Compaq \cite{Anderson2008sea}.
+Microsoft, Intel, IBM, HP, and Compaq~\cite{Anderson2008sea}.
 Their purpose for that was to support \ac{DRM}.
 A newer development in this area is the UEFI secure boot, functionality 
 utilized by the latest versions of Microsoft Windows, where the hardware 
 refuses to boot the operating system if it is not cryptographically signed by 
-a given key \cite{WinUEFIboot}.
+a given key~\cite{WinUEFIboot}.
 This way they can guarantee that the boot loader is not modified, the boot 
 loader can further verify the rest of the operating system.
 Since the operating system is guaranteed to be unmodified, correct operation 
@@ -47,10 +47,9 @@ you will:
 
 The next section covers what you must read before you understand this 
 assignment and how to do the work.
-Section \ref{sec:tasks} covers the work to be done, i.e.~how you should learn 
-this.
-Section \ref{sec:exam} covers how it will be examined, i.e.~how you show that 
-you have fulfilled the intended learning outcomes given above.
+\Cref{sec:tasks} covers the work to be done, i.e.~how you should learn this.
+\Cref{sec:exam} covers how it will be examined, i.e.~how you show that you have 
+fulfilled the intended learning outcomes given above.
 
 
 \section{Theory}
@@ -62,12 +61,15 @@ you have fulfilled the intended learning outcomes given above.
 \label{sec:tasks}
 There is a program with a very simple \ac{DRM} found in URL
 \begin{center}
-  \url{https://github.com/dbosk/drmlab/releases/download/legacy/cpager-drm}.
+  \url{https://github.com/OpenSecEd/drmlab/releases/download/v1.0/cpager-drm}.
 \end{center}
 It is an ELF 64-bit LSB executable (x86-64, dynamically linked, stripped) for 
 a GNU/Linux system.
-(This same program happens to have its source code published under 
-a BSD-license without any \ac{DRM} on the same server.)
+You can find the instruction for how to you the program (without \ac{DRM}) in 
+Sect.~4.1 (specifically List.~1 and 2) of the document at URL\@:
+\begin{center}
+  \url{https://github.com/dbosk/opsys/releases/download/v1.0/labs-paging.pdf}.
+\end{center}
 The first part of this assignment is to break that \ac{DRM}.
 This will be solved together during a full-class hackathon in the computer lab.
 There will be a projector with the code for all to see, then we will rotate who 
@@ -104,4 +106,4 @@ Its original source code can be found in URL
 \url{https://github.com/dbosk/drmlab/}.
 
 
-\printbibliography
+\printbibliography{}
