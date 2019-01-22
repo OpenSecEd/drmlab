@@ -3,7 +3,7 @@ all: drm.pdf
 
 SRC=	drm.tex aims.tex literature.tex drm.bib
 
-drm.pdf: ${SRC} llncs
+drm.pdf: ${SRC}
 
 .PHONY: clean
 clean: clean-drm
